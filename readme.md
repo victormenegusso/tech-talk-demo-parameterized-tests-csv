@@ -1,0 +1,51 @@
+# Testes Parametrizados - Criando massa de entrada com CSV
+## Fluxo da apresentação:
+
+- explicar a presunção
+  - multiplica a receita de serviços por 0.32
+  - multiplica a receita de vendas por 0.08
+  - soma o resultado das receitas
+  - subtrai pela dedução
+  - se o resultado não for negativo, retorna o mesmo se não retorna zero
+  - só valores positivos
+- comentar possíveis cenários na presunção
+  - bom - apenas serviço
+  - bom - serviço + dedução
+  - bom - apenas venda
+  - bom - venda + dedução
+  - bom - serviço + venda
+  - bom - serviço + venda + deducao
+  - ruim - valores invalidos
+- Mostrar a classe de calculo
+  - sobre os parametros invalidos retornarem ZERO... vamos ver mas para frente
+- pergunta - precisamos mesmo de tantos cenários? *os testes são tambem uma prevenção para o futuro*
+- mostrar o fluxo de teste tradicional
+  - 1º problema - não fizemos todos os casos possíveis, e temos muitas linhas
+  - 2º adicionar um novo teste, mais linhas
+  - observação: estamos apenas mudando os dados da entrada e o que esperamos de saída. *história do contábil com casos mais complexos* 
+- explicar os testes parametrizados
+  - delegar a geração das massas de testes em outro lugar
+  - comentar que existem varias formas, sendo que uma delas é o csv
+- mostrar o teste com CSV
+  - começar com mostrando o arquivo, explicar que cada linha é um teste
+  - mostrar como fica o método
+  - mostrar como é exibido o método
+  - fazer um teste quebrar
+  - adicionar novo cenário: *serviço + venda + deducao* `10000, 10000, 1000, 3000`
+  - discutir: O B.A pode nos ajudar com isso? *excel*
+- Honrarias 
+  - a descrição do teste esta feio....
+    - DisplayName -> `PresuncaoCsvDisplayNameTest`
+    - Novo exemplo adicionando uma coluna com a descrição do teste
+  - Assumptions - Premissas
+    - teatro - o time resolve mudar algumas regras como: parametros invalidos devem lançar exceção
+      - nova classe `PresuncaoComException`
+      - como meu teste não é preparado para isso... existe uma nova premissa na minha massa de dados
+      - combinar de usar -1 no valor da presunção para definir uma nova premissa
+    - mostrar o `assumingThat` na classe `PresuncaoCsvAssumingThatTest` 
+  - cara minhas massas de testes são muito complexas 
+    - olá Test Data Builder 
+    - Mostrar um exemplo do time
+- Mostrar exemplos do time    
+- Junit 4?
+  - junit-params -> [link tutorial do God Baeldung](https://www.baeldung.com/junit-params)  

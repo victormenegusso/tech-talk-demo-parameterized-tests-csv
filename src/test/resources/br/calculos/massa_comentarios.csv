@@ -1,0 +1,19 @@
+Receita-Servico, Receita-Venda, Deduções, Presuncao
+#
+# Validação de entrada
+#
+0,               0,             0,        0
+#
+# Receita Serviço
+#
+10000,           0,             0,        3200
+10000,           0,             1000,     2200
+10000,           0,             10000,    0
+10000,           0,             100000,   1
+#
+# Receita Venda
+#
+0,           10000,             0,        800
+0,           10000,             100,      700
+0,           10000,             10000,    0
+0,           10000,             20000,    0
